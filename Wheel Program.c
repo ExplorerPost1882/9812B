@@ -38,7 +38,7 @@ task main()
 
     if (vexRT[Btn6U] == 1)
     {
-    	motor[RightLift]=127;
+      motor[RightLift]=127;
     	motor[LeftLift]=127;
     }
     else if (vexRT[Btn6U] == 0)

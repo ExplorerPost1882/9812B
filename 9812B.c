@@ -31,18 +31,18 @@
 
 void pre_auton()
 {
-  // Set bStopTasksBetweenModes to false if you want to keep user created tasks
-  // running between Autonomous and Driver controlled modes. You will need to
-  // manage all user created tasks if set to false.
-  bStopTasksBetweenModes = true;
+	// Set bStopTasksBetweenModes to false if you want to keep user created tasks
+	// running between Autonomous and Driver controlled modes. You will need to
+	// manage all user created tasks if set to false.
+	bStopTasksBetweenModes = true;
 
 	// Set bDisplayCompetitionStatusOnLcd to false if you don't want the LCD
 	// used by the competition include file, for example, you might want
 	// to display your team name on the LCD in this function.
 	// bDisplayCompetitionStatusOnLcd = false;
 
-  // All activities that occur before the competition starts
-  // Example: clearing encoders, setting servo positions, ...
+	// All activities that occur before the competition starts
+	// Example: clearing encoders, setting servo positions, ...
 }
 
 /*---------------------------------------------------------------------------*/
@@ -56,30 +56,49 @@ void pre_auton()
 /*---------------------------------------------------------------------------*/
 task autonomous()
 {
-	while (1 == 1)
-	{
-		motor[RightWheel] = 100;
-		motor[LeftWheel] = 100;
-		wait1Msec(800);
-		motor[RightWheel] = -100;
-		motor[LeftWheel] = 100;
-		wait1Msec(800);
-		motor[RightWheel] = 87;
-		motor[LeftWheel] = 87;
-		wait1Msec(400);
-		motor[RightWheel] = -100;
-		motor[LeftWheel] = 100;
-		wait1Msec(300);
-		motor[RightWheel] = 127;
-		motor[LeftWheel] = 127;
-		wait1Msec(200);
-	  motor[RightLift] = 76;
-	  motor[LeftLift] = 76;
-	  motor[RightLift] = -76;
-	  motor[RightLift] = -76;
+	motor[RightWheel] = 100;
+	motor[LeftWheel] = 100;
+	wait1Msec(800);
 
+	motor[RightWheel] = -100;
+	motor[LeftWheel] = 100;
+	wait1Msec(800);
 
-	}
+	motor[RightWheel] = 90;
+	motor[LeftWheel] = 90;
+	wait1Msec(400);
+
+	motor[RightWheel] = -100;
+	motor[LeftWheel] = 100;
+	wait1Msec(300);
+
+	motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(200);
+
+	motor[RightLift] = 76;
+	motor[LeftLift] = 76;
+	wait1Msec(100);
+
+	motor[RightLift] = -76;
+	motor[LeftLift] = -76;
+	wait1Msec(100);
+
+	motor[RightLift] = 76;
+	motor[LeftLift] = 76;
+	wait1Msec(100);
+
+	motor[RightLift] = -76;
+	motor[LeftLift] = -76;
+	wait1Msec(100);
+
+	motor[RightWheel] = -127;
+	motor[LeftWheel] = -127;
+	wait1Msec(310);
+
+	motor[RightLift] = 127;
+	motor[LeftLift] = 127;
+	wait1Msec(200);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -96,39 +115,39 @@ task autonomous()
 task usercontrol()
 {
 
-  // User control code here, inside the loop
+	// User control code here, inside the loop
 
 
-    // This is the main execution loop for the user control program.
-    // Each time through the loop your program should update motor + servo
-    // values based on feedback from the joysticks.
+	// This is the main execution loop for the user control program.
+	// Each time through the loop your program should update motor + servo
+	// values based on feedback from the joysticks.
 
-  while (1 == 1)
+	while (true)
 	{
 
-	    motor[RightWheel]  = vexRT[Ch2];
-	    motor[LeftWheel]  = vexRT[Ch3];
+		motor[RightWheel]  = vexRT[Ch2];
+		motor[LeftWheel]  = vexRT[Ch3];
 
-	    if (vexRT[Btn6U] == 1)
-	  {
-		  motor[RightLift]=127;
-	    motor[LeftLift]=127;
-	  }
-	    else if (vexRT[Btn6U] == 0)
+		if (vexRT[Btn6UXmtr2] == 1)
+		{
+			motor[RightLift]=127;
+			motor[LeftLift]=127;
+		}
+		else if (vexRT[Btn6UXmtr2] == 0)
+		{
+			motor[RightLift]=0;
+			motor[LeftLift]=0;
+		}
 
-	  {
-		  motor[RightLift]=0;
-	    motor[LeftLift]=0;
-	  }
-	    if (vexRT[Btn6D] == 1)
-	  {
-	    motor[RightLift]= -127;
-	  	motor[LeftLift]= -127;
-	  }
-	    else if (vexRT[Btn6D] == 0)
-	  {
-	  	motor[RightLift]= 0;
-	  	motor[LeftLift]= 0;
-	  }
+		if (vexRT[Btn6DXmtr2] == 1)
+		{
+			motor[RightLift]= -127;
+			motor[LeftLift]= -127;
+		}
+		else if (vexRT[Btn6DXmtr2] == 0)
+		{
+			motor[RightLift]= 0;
+			motor[LeftLift]= 0;
+		}
 	}
 }
