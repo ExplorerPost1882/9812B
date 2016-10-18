@@ -57,25 +57,25 @@ void pre_auton()
 
 task autonomous()
 {
-  motor[RightWheel] = 100;
-	motor[LeftWheel] = 100;
-	wait1Msec(800);
+  motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(1400);
 
-	motor[RightWheel] = -100;
-	motor[LeftWheel] = 100;
-	wait1Msec(800);
-
-	motor[RightWheel] = 90;
-	motor[LeftWheel] = 90;
-	wait1Msec(400);
-
-	motor[RightWheel] = -100;
-	motor[LeftWheel] = 100;
-	wait1Msec(300);
+	motor[RightWheel] = -127;
+	motor[LeftWheel] = 127;
+	wait1Msec(1100);
 
 	motor[RightWheel] = 127;
 	motor[LeftWheel] = 127;
-	wait1Msec(200);
+	wait1Msec(800);
+
+	motor[RightWheel] = -127;
+	motor[LeftWheel] = 127;
+	wait1Msec(1000);
+
+	motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(2030);
 
 	motor[RightLift] = 76;
 	motor[LeftLift] = 76;
@@ -95,7 +95,7 @@ task autonomous()
 
 	motor[RightWheel] = -127;
 	motor[LeftWheel] = -127;
-	wait1Msec(310);
+	wait1Msec(2030);
 
 	motor[RightLift] = 127;
 	motor[LeftLift] = 127;
@@ -114,12 +114,66 @@ task autonomous()
 	wait1Msec(2300);
 
 	motor[RightWheel] = -127;
-	motor[RightWheel] = 127;
-	wait1Msec(200);
+	motor[LeftWheel] = 127;
+	wait1Msec(2000);
 
 	motor[RightWheel] = -127;
-	motor[RightWheel] = -127;
+	motor[LeftWheel] = -127;
 	wait1Msec(2300);
+
+	motor[RightWheel] = 0;
+	motor[RightWheel] = 0;
+	wait1Msec(2700);
+	//suposed to be a pre-load on robot now, forgot it was there and forgot to program
+	motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(2000);
+
+	motor[RightWheel] = -127;
+	motor[LeftWheel] = 127;
+	wait1Msec(1600);
+
+	motor[RightWheel] = -127;
+	motor[LeftWheel] = -127;
+	wait1Msec(200);
+
+	motor[RightLift] = 127;
+	motor[LeftLift] = 127;
+	wait1Msec(200);
+
+	motor[RightLift] = -127;
+	motor[LeftLift] = -127;
+	wait1Msec(200);
+
+	motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(230);
+
+	motor[RightLift] = 127;
+	motor[RightLift] = 127;
+	wait1Msec(200);
+
+	motor[RightLift] = -127;
+	motor[LeftLift] = -127;
+	wait1Msec(200);
+
+	motor[RightWheel] = 127;
+	motor[LeftWheel] = 127;
+	wait1Msec(230);
+
+	motor[RightLift] = 127;
+	motor[RightLift] = 127;
+	wait1Msec(200);
+
+	motor[RightLift] = -127;
+	motor[LeftLift] = -127;
+	wait1Msec(200);
+
+
+
+
+
+
 
   // Remove this function call once you have "real" code.
   AutonomousCodePlaceholderForTesting();
