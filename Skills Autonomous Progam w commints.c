@@ -57,22 +57,23 @@ void pre_auton()
 
 task autonomous()
 {
+	//go out for 1.4 seconds
   motor[RightWheel] = 127;
 	motor[LeftWheel] = 127;
 	wait1Msec(1400);
-
+	//rotate right 90
 	motor[RightWheel] = -127;
 	motor[LeftWheel] = 127;
 	wait1Msec(1100);
-
+	//go forward for 0.8 seconds
 	motor[RightWheel] = 127;
 	motor[LeftWheel] = 127;
 	wait1Msec(800);
-
+	//rotate right 90
 	motor[RightWheel] = -127;
 	motor[LeftWheel] = 127;
 	wait1Msec(1000);
-
+	//
 	motor[RightWheel] = 127;
 	motor[LeftWheel] = 127;
 	wait1Msec(2030);
